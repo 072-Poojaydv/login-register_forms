@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registration</title>
+	<link rel="stylesheet" href="rcstyle.css">
+</head>
+<body>
+
+
+<section>
+    <div class="rt-container">
+          <div class="col-rt-12">
+               
+               <div class="form-container">
+                   <h1>Registration Form</h1>
+                <form name="registerForm">
+                  <label for="firstName">First Name *</label>
+                  <input type="text" id="firstName" name="firstName" placeholder="FName" required/>
+
+                  <label for="lastName">Last Name *</label>
+                  <input type="text" id="lastName" placeholder="Lname" required/>
+                  
+                  <label for="e-mail">E-mail address *</label>
+                  <input type="email" id="e-mail" placeholder="email" required/>
+                  
+                  <label for="phoneNumber">Phone Number</label>
+                  <input type="tel" id="phoneNumber" maxlength="10" pattern=".{10,}"  placeholder="only numbers..." required/>
+                  
+                  <label for="password">Password *</label>
+                  <input type="password" id="password" pattern=".{8,}"   required title="8 characters minimum" placeholder="*****"/>
+                  <label for="password">Confirm Password *</label>
+                  <input type="password" id="confirm_password" pattern=".{8,}"   required title="8 characters minimum" placeholder="*****"/>
+                 
+                  <p class="password-rules">Your password should contain at least 8 characters and 1 number.</p>
+                    <input class="button" type="submit" value="submit" name="submit" onClick="Validate()" /></div>
+                </form>
+            </div>
+  
+		</div>
+    </div>
+</section>
+<script type="text/javascript">
+    function Validate() 
+    {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirm_password").value;
+        if (password != confirmPassword) 
+        {
+            alert("Passwords do not match.");
+            return false;
+        }
+        return true;
+    }
+</script>
+</body>
+</html>
